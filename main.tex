@@ -3,6 +3,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
+\usepackage{tabularx}
+\usepackage{float}
 
 \usepackage[a4paper, margin=1in]{geometry}
 
@@ -21,7 +23,100 @@
 The laptop I used for testing is a M3 Macbook Air running macOS 26.2.
 For creating the test plans and perfoming the perfomance tests I have used Apache JMeter.
 
-\section{System Under Test}
-The System Under Test I decided to use for my tests was ... TODO.
+\section{Test Plan}
+The System Under Test I decided to use for my tests was a sample test website provided by BlazeMeter: https://blazedemo.com/.
+In my tests I have targeted the homepage, the reserve page, and the purchase page. The URL for the pages are the following:
+\begin{itemize}
+  \item Homepage: https://blazedemo.com/index.php
+  \item Reserve page: https://blazedemo.com/reserve.php
+  \item Purchase page: https://blazedemo.com/purchase.php
+\end{itemize}
+
+
+\section{Types of tests conducted}
+
+The site was tested with three distintive types of perfomance tests:
+
+\vspace{12pt}
+{\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{|X|X|}
+  \hline
+  \textbf{Type} & \textbf{Description} \\
+  \hline
+  Baseline stress test & Number of threads (users) : 2 \newline Ramp-up period: 2 seconds \newline Loop count: 10 \\
+  \hline
+  Stress test & Number of threads (users) : 20 \newline Ramp-up period: 2 seconds \newline Loop count: 10 \\
+  \hline
+  Spike test & Number of threads (users) : 200 \newline Ramp-up period: 1 seconds \newline Loop count: 5 \\
+  \hline
+\end{tabularx}}
+
+\section{Initial Expectations}
+
+Before running the tests I expected the site to respond within 500 - 1000 milliseconds during the baseline perfomance test. I also expected the stress test, and spike tests both to cause about a 100 milliseconds increase in the response times.
+
+\section{Results}
+
+\subsection{Baseline test}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Baseline perfomance test results}
+\label{tab:performance}
+\begin{tabularx}{\textwidth}{X r r r r r r}
+\hline
+\textbf{Request} & \textbf{\# Samples} & \textbf{Min (ms)} & \textbf{Max (ms)} & \textbf{Avg (ms)} & \textbf{Median (ms)} & \textbf{Error \%} \\
+\hline
+Homepage      & 20 & 361 & 725 & 415 & 396 & 0.00\% \\
+Reserve Page  & 20 & 369 & 552 & 404 & 398 & 0.00\% \\
+Purchase Page & 20 & 377 & 498 & 404 & 392 & 0.00\% \\
+\hline
+\textbf{Total} & \textbf{60} & \textbf{361} & \textbf{725} & \textbf{408} & \textbf{397} & \textbf{0.00\%} \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Stress test results}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Stress test results}
+\label{tab:stress}
+\begin{tabularx}{\textwidth}{X r r r r r r}
+\hline
+\textbf{Request} & \textbf{\# Samples} & \textbf{Min (ms)} & \textbf{Max (ms)} & \textbf{Avg (ms)} & \textbf{Median (ms)} & \textbf{Error \%} \\
+\hline
+Homepage      & 200 & 353 & 727 & 410 & 392 & 0.00\% \\
+Reserve Page  & 200 & 358 & 547 & 399 & 392 & 0.00\% \\
+Purchase Page & 200 & 363 & 529 & 405 & 398 & 0.00\% \\
+\hline
+\textbf{Total} & \textbf{600} & \textbf{353} & \textbf{727} & \textbf{405} & \textbf{393} & \textbf{0.00\%} \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Spike test}
+
+\begin{table}[H]
+\centering
+\small
+\caption{Spike perfomance test results}
+\label{tab:spike}
+\begin{tabularx}{\textwidth}{X r r r r r r}
+\hline
+\textbf{Request} & \textbf{\# Samples} & \textbf{Min (ms)} & \textbf{Max (ms)} & \textbf{Avg (ms)} & \textbf{Median (ms)} & \textbf{Error \%} \\
+\hline
+Homepage      & 1000 & 362 & 1813 & 639 & 550 & 0.00\% \\
+Reserve Page  & 1000 & 355 & 1767 & 635 & 521 & 0.00\% \\
+Purchase Page & 1000 & 360 & 1850 & 631 & 522 & 0.00\% \\
+\hline
+\textbf{Total} & \textbf{3000} & \textbf{355} & \textbf{1850} & \textbf{635} & \textbf{530} & \textbf{0.00\%} \\
+\hline
+\end{tabularx}
+\end{table}
 
 \end{document}
+
+\section{Conclusion}
