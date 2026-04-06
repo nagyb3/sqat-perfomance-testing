@@ -25,7 +25,7 @@ For creating the test plans and perfoming the perfomance tests I have used Apach
 
 \section{Test Plan}
 The System Under Test I decided to use for my tests was a sample test website provided by BlazeMeter: https://blazedemo.com/.
-In my tests I have targeted the homepage, the reserve page, and the purchase page. The URL for the pages are the following:
+In my tests I have targeted the homepage, the reserve page and the purchase page. The URLs for the pages are the following:
 \begin{itemize}
   \item Homepage: https://blazedemo.com/index.php
   \item Reserve page: https://blazedemo.com/reserve.php
@@ -62,39 +62,39 @@ Before running the tests I expected the site to respond within 500 - 1000 millis
 \begin{table}[H]
 \centering
 \small
+\begin{tabularx}{\textwidth}{X r r r r r r}
+  \hline
+  \textbf{Request} & \textbf{\# Samples} & \textbf{Min (ms)} & \textbf{Max (ms)} & \textbf{Avg (ms)} & \textbf{Median (ms)} & \textbf{Error \%} \\
+  \hline
+  Homepage      & 20 & 361 & 725 & 415 & 396 & 0.00\% \\
+  Reserve Page  & 20 & 369 & 552 & 404 & 398 & 0.00\% \\
+  Purchase Page & 20 & 377 & 498 & 404 & 392 & 0.00\% \\
+  \hline
+  \textbf{Total} & \textbf{60} & \textbf{361} & \textbf{725} & \textbf{408} & \textbf{397} & \textbf{0.00\%} \\
+  \hline
+\end{tabularx}
 \caption{Baseline perfomance test results}
 \label{tab:performance}
-\begin{tabularx}{\textwidth}{X r r r r r r}
-\hline
-\textbf{Request} & \textbf{\# Samples} & \textbf{Min (ms)} & \textbf{Max (ms)} & \textbf{Avg (ms)} & \textbf{Median (ms)} & \textbf{Error \%} \\
-\hline
-Homepage      & 20 & 361 & 725 & 415 & 396 & 0.00\% \\
-Reserve Page  & 20 & 369 & 552 & 404 & 398 & 0.00\% \\
-Purchase Page & 20 & 377 & 498 & 404 & 392 & 0.00\% \\
-\hline
-\textbf{Total} & \textbf{60} & \textbf{361} & \textbf{725} & \textbf{408} & \textbf{397} & \textbf{0.00\%} \\
-\hline
-\end{tabularx}
 \end{table}
 
-\subsection{Stress test results}
+\subsection{Stress test}
 
 \begin{table}[H]
 \centering
 \small
-\caption{Stress test results}
-\label{tab:stress}
 \begin{tabularx}{\textwidth}{X r r r r r r}
-\hline
-\textbf{Request} & \textbf{\# Samples} & \textbf{Min (ms)} & \textbf{Max (ms)} & \textbf{Avg (ms)} & \textbf{Median (ms)} & \textbf{Error \%} \\
-\hline
-Homepage      & 200 & 353 & 727 & 410 & 392 & 0.00\% \\
-Reserve Page  & 200 & 358 & 547 & 399 & 392 & 0.00\% \\
-Purchase Page & 200 & 363 & 529 & 405 & 398 & 0.00\% \\
-\hline
-\textbf{Total} & \textbf{600} & \textbf{353} & \textbf{727} & \textbf{405} & \textbf{393} & \textbf{0.00\%} \\
-\hline
+  \hline
+  \textbf{Request} & \textbf{\# Samples} & \textbf{Min (ms)} & \textbf{Max (ms)} & \textbf{Avg (ms)} & \textbf{Median (ms)} & \textbf{Error \%} \\
+  \hline
+  Homepage      & 200 & 353 & 727 & 410 & 392 & 0.00\% \\
+  Reserve Page  & 200 & 358 & 547 & 399 & 392 & 0.00\% \\
+  Purchase Page & 200 & 363 & 529 & 405 & 398 & 0.00\% \\
+  \hline
+  \textbf{Total} & \textbf{600} & \textbf{353} & \textbf{727} & \textbf{405} & \textbf{393} & \textbf{0.00\%} \\
+  \hline
 \end{tabularx}
+\caption{Stress perfomance test results}
+\label{tab:stress}
 \end{table}
 
 \subsection{Spike test}
@@ -102,21 +102,24 @@ Purchase Page & 200 & 363 & 529 & 405 & 398 & 0.00\% \\
 \begin{table}[H]
 \centering
 \small
+\begin{tabularx}{\textwidth}{X r r r r r r}
+  \hline
+  \textbf{Request} & \textbf{\# Samples} & \textbf{Min (ms)} & \textbf{Max (ms)} & \textbf{Avg (ms)} & \textbf{Median (ms)} & \textbf{Error \%} \\
+  \hline
+  Homepage      & 1000 & 362 & 1813 & 639 & 550 & 0.00\% \\
+  Reserve Page  & 1000 & 355 & 1767 & 635 & 521 & 0.00\% \\
+  Purchase Page & 1000 & 360 & 1850 & 631 & 522 & 0.00\% \\
+  \hline
+  \textbf{Total} & \textbf{3000} & \textbf{355} & \textbf{1850} & \textbf{635} & \textbf{530} & \textbf{0.00\%} \\
+  \hline
+\end{tabularx}
 \caption{Spike perfomance test results}
 \label{tab:spike}
-\begin{tabularx}{\textwidth}{X r r r r r r}
-\hline
-\textbf{Request} & \textbf{\# Samples} & \textbf{Min (ms)} & \textbf{Max (ms)} & \textbf{Avg (ms)} & \textbf{Median (ms)} & \textbf{Error \%} \\
-\hline
-Homepage      & 1000 & 362 & 1813 & 639 & 550 & 0.00\% \\
-Reserve Page  & 1000 & 355 & 1767 & 635 & 521 & 0.00\% \\
-Purchase Page & 1000 & 360 & 1850 & 631 & 522 & 0.00\% \\
-\hline
-\textbf{Total} & \textbf{3000} & \textbf{355} & \textbf{1850} & \textbf{635} & \textbf{530} & \textbf{0.00\%} \\
-\hline
-\end{tabularx}
 \end{table}
 
-\end{document}
 
 \section{Conclusion}
+As we can witness in the above tables the stress test proved to produce similar results to our baseline.
+However, the spike perfomance test seems to actually slowed the system under test down which increased its response times.
+
+\end{document}
