@@ -53,9 +53,12 @@ The site was tested with three distintive types of perfomance tests:
 
 \section{Initial Expectations}
 
-Before running the tests I expected the site to respond within 500 - 1000 milliseconds during the baseline perfomance test. I also expected the stress test, and spike tests both to cause about a 100 milliseconds increase in the response times.
+Before running the tests I expected the site to respond within 500 - 1000 milliseconds during the baseline perfomance test. I also expected the stress test, and spike tests both to cause about a 100 milliseconds increase in the median response times.
 
 \section{Results}
+
+The results gathered during the tests are the following including the number of samples, minimum response times, maximum response time, average response time, median response time (in milliseconds), and the error rate.
+The results are given for each of the requests and the aggregate total.
 
 \subsection{Baseline test}
 
@@ -119,7 +122,14 @@ Before running the tests I expected the site to respond within 500 - 1000 millis
 
 
 \section{Conclusion}
-As we can witness in the above tables the stress test proved to produce similar results to our baseline.
-However, the spike perfomance test seems to actually slowed the system under test down which increased its response times.
+As we can see in the results, the System Under Test seemed the respond during the baseline perfomance tests close to the expected response times.
+The stress test produced similar results to our baseline tests, which goes against what I anticipated initially.
+
+However, the spike test produced slower response times compared to the baseline perfomance test (as expected).
+The median response time between the spike test and the baseline was 133 milliseconds.
+Also, the average response time was 105 milliseconds higher than the median response time in the spike test, which seems to indicate that in the measurements we had a few slower response times.
+This is also supported by the fact that we witnessed a 1850 millisecond maximum response time during the spike perfomance test. 
+
+Also notably, the System Under Test hasn't produced any errors throughout the 3 tests as we had a 0.00\% error rate in all of the tests.
 
 \end{document}
