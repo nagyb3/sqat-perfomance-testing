@@ -2,3 +2,6 @@
 *.aux
 *.log
 *.run.xml
+hvtdd4_bead
+*.zip
+.DS_store
