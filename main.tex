@@ -10,7 +10,7 @@
 
 \usepackage[backend=bibtex, sortcites=true, style=numeric-comp, sorting=none]{biblatex}
 
-\title{Performance test assigment}
+\title{Performance test assignment}
 \author{Name: Bence Nagy\\Neptun code: HVTDD4}
 \date{}
 
@@ -21,21 +21,21 @@
 \section{Test setup}
 
 The laptop I used for testing is a M3 Macbook Air running macOS 26.2.
-For creating the test plans and perfoming the perfomance tests I have used Apache JMeter.
+For creating the test plans and performing the performance tests I have used Apache JMeter.
 
 \section{Test Plan}
-The System Under Test I decided to use for my tests was a sample test website provided by BlazeMeter: https://blazedemo.com/.
+The System Under Test I decided to use for my tests was a sample test website provided by BlazeMeter: \url{https://blazedemo.com/}.
 In my tests I have targeted the homepage, the reserve page and the purchase page. The URLs for the pages are the following:
 \begin{itemize}
-  \item Homepage: https://blazedemo.com/index.php
-  \item Reserve page: https://blazedemo.com/reserve.php
-  \item Purchase page: https://blazedemo.com/purchase.php
+  \item Homepage: \url{https://blazedemo.com/index.php}
+  \item Reserve page: \url{https://blazedemo.com/reserve.php}
+  \item Purchase page: \url{https://blazedemo.com/purchase.php}
 \end{itemize}
 
 
 \section{Types of tests conducted}
 
-The site was tested with three distintive types of perfomance tests:
+The site was tested with three distinctive types of performance tests:
 
 \vspace{12pt}
 {\renewcommand{\arraystretch}{1.5}
@@ -53,14 +53,19 @@ The site was tested with three distintive types of perfomance tests:
 
 \section{Initial Expectations}
 
-Before running the tests I expected the site to respond within 500 - 1000 milliseconds during the baseline perfomance test. I also expected the stress test, and spike tests both to cause about a 100 milliseconds increase in the median response times.
+Before running the tests I expected the site to respond within 500 - 1000 milliseconds during the baseline performance test. I also expected the stress test, and spike tests both to cause about a 100 milliseconds increase in the median response times.
 
 \section{Results}
 
 The results gathered during the tests are the following including the number of samples, minimum response times, maximum response time, average response time, median response time (in milliseconds), and the error rate.
 The results are given for each of the requests and the aggregate total.
 
+For each of the test types I have performed 3 separate runs and will present the results for each of them.
+The three runs were made on different days, during different time of the day.
+
 \subsection{Baseline test}
+
+\subsubsection{First run}
 
 \begin{table}[H]
 \centering
@@ -76,11 +81,53 @@ The results are given for each of the requests and the aggregate total.
   \textbf{Total} & \textbf{60} & \textbf{361} & \textbf{725} & \textbf{408} & \textbf{397} & \textbf{0.00\%} \\
   \hline
 \end{tabularx}
-\caption{Baseline perfomance test results}
+\caption{Baseline performance test results (first run)}
 \label{tab:performance}
 \end{table}
 
+\subsubsection{Second run}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{X r r r r r r}
+  \hline
+  \textbf{Request} & \textbf{\# Samples} & \textbf{Min (ms)} & \textbf{Max (ms)} & \textbf{Avg (ms)} & \textbf{Median (ms)} & \textbf{Error \%} \\
+  \hline
+  Homepage      & 20 & 407 & 1954 & 697 & 579 & 0.00\% \\
+  Reserve Page  & 20 & 444 & 1109 & 638 & 552 & 0.00\% \\
+  Purchase Page & 20 & 404 & 1232 & 688 & 548 & 0.00\% \\
+  \hline
+  \textbf{Total} & \textbf{60} & \textbf{404} & \textbf{1954} & \textbf{674} & \textbf{555} & \textbf{0.00\%} \\
+  \hline
+\end{tabularx}
+\caption{Baseline performance test results (second run)}
+\label{tab:performance2}
+\end{table}
+
+\subsubsection{Third run}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{X r r r r r r}
+  \hline
+  \textbf{Request} & \textbf{\# Samples} & \textbf{Min (ms)} & \textbf{Max (ms)} & \textbf{Avg (ms)} & \textbf{Median (ms)} & \textbf{Error \%} \\
+  \hline
+  Homepage      & 20 & 387 & 1048 & 583 & 546 & 0.00\% \\
+  Reserve Page  & 20 & 478 & 5951 & 846 & 530 & 0.00\% \\
+  Purchase Page & 20 & 406 & 1074 & 592 & 530 & 0.00\% \\
+  \hline
+  \textbf{Total} & \textbf{60} & \textbf{387} & \textbf{5951} & \textbf{674} & \textbf{531} & \textbf{0.00\%} \\
+  \hline
+\end{tabularx}
+\caption{Baseline performance test results (third run)}
+\label{tab:performance3}
+\end{table}
+
 \subsection{Stress test}
+
+\subsubsection{First run}
 
 \begin{table}[H]
 \centering
@@ -96,11 +143,53 @@ The results are given for each of the requests and the aggregate total.
   \textbf{Total} & \textbf{600} & \textbf{353} & \textbf{727} & \textbf{405} & \textbf{393} & \textbf{0.00\%} \\
   \hline
 \end{tabularx}
-\caption{Stress perfomance test results}
+\caption{Stress performance test results (First run)}
 \label{tab:stress}
 \end{table}
 
+\subsubsection{Second run}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{X r r r r r r}
+  \hline
+  \textbf{Request} & \textbf{\# Samples} & \textbf{Min (ms)} & \textbf{Max (ms)} & \textbf{Avg (ms)} & \textbf{Median (ms)} & \textbf{Error \%} \\
+  \hline
+  Homepage      & 200 & 345 & 3697 & 706 & 530 & 0.00\% \\
+  Reserve Page  & 200 & 356 & 3223 & 630 & 527 & 0.00\% \\
+  Purchase Page & 200 & 365 & 3359 & 712 & 531 & 0.00\% \\
+  \hline
+  \textbf{Total} & \textbf{600} & \textbf{345} & \textbf{3697} & \textbf{683} & \textbf{530} & \textbf{0.00\%} \\
+  \hline
+\end{tabularx}
+\caption{Stress performance test results (second run)}
+\label{tab:stress2}
+\end{table}
+
+\subsubsection{Third run}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{X r r r r r r}
+  \hline
+  \textbf{Request} & \textbf{\# Samples} & \textbf{Min (ms)} & \textbf{Max (ms)} & \textbf{Avg (ms)} & \textbf{Median (ms)} & \textbf{Error \%} \\
+  \hline
+  Homepage      & 200 & 363 & 3203 & 727 & 558 & 0.00\% \\
+  Reserve Page  & 200 & 370 & 3083 & 775 & 538 & 0.00\% \\
+  Purchase Page & 200 & 373 & 3227 & 755 & 539 & 0.00\% \\
+  \hline
+  \textbf{Total} & \textbf{600} & \textbf{363} & \textbf{3227} & \textbf{753} & \textbf{547} & \textbf{0.00\%} \\
+  \hline
+\end{tabularx}
+\caption{Stress performance test results (third run)}
+\label{tab:stress3}
+\end{table}
+
 \subsection{Spike test}
+
+\subsubsection{First run}
 
 \begin{table}[H]
 \centering
@@ -116,20 +205,68 @@ The results are given for each of the requests and the aggregate total.
   \textbf{Total} & \textbf{3000} & \textbf{355} & \textbf{1850} & \textbf{635} & \textbf{530} & \textbf{0.00\%} \\
   \hline
 \end{tabularx}
-\caption{Spike perfomance test results}
+\caption{Spike performance test results (first run)}
 \label{tab:spike}
 \end{table}
 
+\subsubsection{Second run}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{X r r r r r r}
+  \hline
+  \textbf{Request} & \textbf{\# Samples} & \textbf{Min (ms)} & \textbf{Max (ms)} & \textbf{Avg (ms)} & \textbf{Median (ms)} & \textbf{Error \%} \\
+  \hline
+  Homepage      & 1000 & 366 & 5699 & 1023 & 708 & 0.00\% \\
+  Reserve Page  & 1000 & 362 & 5565 & 1023 & 670 & 0.00\% \\
+  Purchase Page & 1000 & 357 & 5649 &  992 & 628 & 0.00\% \\
+  \hline
+  \textbf{Total} & \textbf{3000} & \textbf{357} & \textbf{5699} & \textbf{1013} & \textbf{673} & \textbf{0.00\%} \\
+  \hline
+\end{tabularx}
+\caption{Spike performance test results (second run)}
+\label{tab:spike2}
+\end{table}
+
+\subsubsection{Third run}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{X r r r r r r}
+  \hline
+  \textbf{Request} & \textbf{\# Samples} & \textbf{Min (ms)} & \textbf{Max (ms)} & \textbf{Avg (ms)} & \textbf{Median (ms)} & \textbf{Error \%} \\
+  \hline
+  Homepage      & 1000 & 362 & 4361 &  958 & 672 & 0.00\% \\
+  Reserve Page  & 1000 & 360 & 4492 & 1051 & 711 & 0.00\% \\
+  Purchase Page & 1000 & 360 & 4451 &  994 & 655 & 0.00\% \\
+  \hline
+  \textbf{Total} & \textbf{3000} & \textbf{360} & \textbf{4492} & \textbf{1001} & \textbf{681} & \textbf{0.00\%} \\
+  \hline
+\end{tabularx}
+\caption{Spike performance test results (third run)}
+\label{tab:spike3}
+\end{table}
 
 \section{Conclusion}
-As we can see in the results, the System Under Test seemed the respond during the baseline perfomance tests close to the expected response times.
-The stress test produced similar results to our baseline tests, which goes against what I anticipated initially.
+As we can see in the results, the System Under Test responded during the baseline  performance tests close to the expected response times, with median response times 
+ranging between 397 and 531 milliseconds across the three runs.
 
-However, the spike test produced slower response times compared to the baseline perfomance test (as expected).
-The median response time between the spike test and the baseline was 133 milliseconds.
-Also, the average response time was 105 milliseconds higher than the median response time in the spike test, which seems to indicate that in the measurements we had a few slower response times.
-This is also supported by the fact that we witnessed a 1850 millisecond maximum response time during the spike perfomance test. 
+The stress test produced results similar to our baseline tests, which goes against what I initially expected. The median response times during the stress 
+test runs ranged between 393 and 547 milliseconds, showing only a slight increase compared to the baseline. 
 
-Also notably, the System Under Test hasn't produced any errors throughout the 3 tests as we had a 0.00\% error rate in all of the tests.
+However, the spike test produced noticeably slower response times across all three runs, as expected. 
+The median response times during the spike runs were 530, 673, and 681 milliseconds respectively, compared to a baseline median of roughly 400-531 milliseconds. 
+
+Also more importantly, the average response time was 105 milliseconds higher than the median response time in the spike test, which seems to indicate that in the measurements we had a few slower response times.
+Also, the maximum response times during the spike test were 1850, 5699, and 4492 milliseconds across the three runs, indicating that under sudden high load the server occasionally struggled to respond in a timely manner.  
+
+Also notably, the System Under Test hasn't produced any errors throughout the total 9 test runs as we had a 0.00\% error rate in all of nine of them.
+
+\section{Note}
+
+The exported csv files from Apache JMeter that contain the measurement results can be found in the following Github repository: \url{https://github.com/nagyb3/sqat-perfomance-testing}.
+The \texttt{.jmx} file containing the JMeter project can also be found here.
 
 \end{document}
